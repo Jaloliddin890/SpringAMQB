@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: usage_message
+
+logging:
+  level:
+    org: ERROR
+
+tutorial:
+  client:
+    duration: 10000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: sender
+server:
+  port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: receiver
+server:
+  port: 0
